@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 @Service
 public class TransfereAgendamentoService {
@@ -24,6 +25,10 @@ public class TransfereAgendamentoService {
     }
 
     private BigDecimal calculoTaxa(LocalDate dataTransferencia) {
-        
+            Long diasTransferencia = ChronoUnit.DAYS.between(LocalDate.now(),dataTransferencia);
+            if (diasTransferencia <= 0)
+                return new BigDecimal("0.025");
+            
+        return null;
     }
 }
