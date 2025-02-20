@@ -22,7 +22,8 @@ public class TransfereAgendamentoService {
         if (taxa == null){
             throw new IllegalArgumentException("Não tem taxa a ser aplicada para a data informada");
         }
-        agendamento.setTaxa(agendamento.getValorTransferencia().multiply(taxa));
+        agendamento.setTaxa(taxa);
+        agendamento.setDataAgendamento(LocalDate.now());
         return repository.save(agendamento);
     }
 
