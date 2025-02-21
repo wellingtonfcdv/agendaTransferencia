@@ -15,16 +15,25 @@ export class AgendamentoComponent{
         dataTransferencia: ''
     };
 
+    errorMessage: string | null = null;
+
     constructor(private transferenciaService: TransferenciaService){}
 
     onSubmit(){
-        this.transferenciaService.agendarTransferencia(this.transferencia).subscribe(
-            response => {
+        this.errorMessage = null;
+            
+        this.transferenciaService.agendarTransferencia(this.transferencia).subscribe({
+            next: (response) => {
                 alert('Transferência agendada com sucesso!');
             },
-            error =>{
-              alert('Erro ao agendar transferência: ' + error.message);
+            error: (err) => {
+                const errorMsg = err.error?.message || err.error || 'Erro desconhecido ao agendar transferência.';
+
+                this.errorMessage = errorMsg.replace('java.lang.IllegalArgumentException: ', '');
             }
-        );
+        });
     }
+        
+
+
 }

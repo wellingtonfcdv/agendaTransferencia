@@ -6,16 +6,18 @@ import { Observable } from "rxjs";
     providedIn: 'root'
 })
 export class TransferenciaService{
-    private apiUrl = 'http://localhost:8080/api/transferencia';
+    private baseUrl = 'http://localhost:8080/api'; 
+    private agendamentoUrl = `${this.baseUrl}/transferencia`; 
+    private listagemUrl = `${this.baseUrl}/agendamentos`; 
 
     constructor(private http: HttpClient){}
 
     agendarTransferencia(transferencia: any): Observable<any>{
-        return this.http.post(this.apiUrl, transferencia);
+        return this.http.post(this.agendamentoUrl, transferencia);
 
     }
 
     listarTransferencias(): Observable<any>{
-        return this.http.get(this.apiUrl);
+        return this.http.get(this.listagemUrl);
     }
 }
