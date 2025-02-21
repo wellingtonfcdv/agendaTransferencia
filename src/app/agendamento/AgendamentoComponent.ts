@@ -11,7 +11,7 @@ export class AgendamentoComponent{
     transferencia = {
         contaOrigem: '',
         contaDestino: '',
-        valor: null,
+        valorTransferencia: null,
         dataTransferencia: ''
     };
 

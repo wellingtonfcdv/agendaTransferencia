@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
     providedIn: 'root'
 })
 export class TransferenciaService{
-    private apiUrl = 'http://localhost:8080/transferencias';
+    private apiUrl = 'http://localhost:8080/api/transferencia';
 
     constructor(private http: HttpClient){}
 
