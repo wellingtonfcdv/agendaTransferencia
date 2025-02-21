@@ -24,8 +24,11 @@ public class TransfereAgendamentoService {
             throw new IllegalArgumentException("Não tem taxa a ser aplicada para a data informada");
         }
 
-
+        BigDecimal taxaCalculada = agendamento.getValorTransferencia().multiply(taxa).setScale(2, RoundingMode.HALF_UP);
+        BigDecimal valorFinal = agendamento.getValorTransferencia().subtract(taxa);
         agendamento.setTaxa(taxa);
+        agendamento.setTaxaAtualizada(taxaCalculada);
+        agendamento.setValorFinal(valorFinal);
         agendamento.setDataAgendamento(LocalDate.now());
         return repository.save(agendamento);
     }
