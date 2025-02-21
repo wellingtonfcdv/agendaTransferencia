@@ -5,6 +5,7 @@ import com.br.tokio.transferencia.repositories.TransfereAgendamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.xml.crypto.Data;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
@@ -20,11 +21,15 @@ public class TransfereAgendamentoService {
 
     public TransfereAgendamento transfereAgendamento(TransfereAgendamento agendamento){
         BigDecimal taxa = verificaTaxa(agendamento.getDataTransferencia());
-        if (taxa == null){
+        LocalDate dataTransferencia = agendamento.getDataTransferencia();
+        LocalDate dataAtual = LocalDate.now();
+
+        if (dataTransferencia.isBefore(dataAtual)) {
+            throw new IllegalArgumentException("A data de transferência não pode ser anterior à data atual.");
+        } else if (taxa == null){
             throw new IllegalArgumentException("Não tem taxa a ser aplicada para a data informada");
-        }
-        System.out.println(agendamento.getValorTransferencia());
-        if(agendamento.getValorTransferencia() == null){
+
+        }else if(agendamento.getValorTransferencia() == null){
             throw new IllegalArgumentException("O valor da transferência não pode ser nulo.");
         }
 
