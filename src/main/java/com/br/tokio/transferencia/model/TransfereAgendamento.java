@@ -1,11 +1,19 @@
 package com.br.tokio.transferencia.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class TransfereAgendamento {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,62 +26,7 @@ public class TransfereAgendamento {
     private BigDecimal taxa;
     private LocalDate dataTransferencia;
     private LocalDate dataAgendamento;
+    private BigDecimal valorFinal;
 
-    public TransfereAgendamento() {}
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getContaOrigem() {
-        return contaOrigem;
-    }
-
-    public void setContaOrigem(String contaOrigem) {
-        this.contaOrigem = contaOrigem;
-    }
-
-    public String getContaDestino() {
-        return contaDestino;
-    }
-
-    public void setContaDestino(String contaDestino) {
-        this.contaDestino = contaDestino;
-    }
-
-    public BigDecimal getValorTransferencia() {
-        return valorTransferencia;
-    }
-
-    public void setValorTransferencia(BigDecimal valorTransferencia) {
-        this.valorTransferencia = valorTransferencia;
-    }
-
-    public BigDecimal getTaxa() {
-        return taxa;
-    }
-
-    public void setTaxa(BigDecimal taxa) {
-        this.taxa = taxa;
-    }
-
-    public LocalDate getDataTransferencia() {
-        return dataTransferencia;
-    }
-
-    public void setDataTransferencia(LocalDate dataTransferencia) {
-        this.dataTransferencia = dataTransferencia;
-    }
-
-    public LocalDate getDataAgendamento() {
-        return dataAgendamento;
-    }
-
-    public void setDataAgendamento(LocalDate dataAgendamento) {
-        this.dataAgendamento = dataAgendamento;
-    }
 }
