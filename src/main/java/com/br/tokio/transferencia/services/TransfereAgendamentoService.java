@@ -23,6 +23,10 @@ public class TransfereAgendamentoService {
         if (taxa == null){
             throw new IllegalArgumentException("Não tem taxa a ser aplicada para a data informada");
         }
+        System.out.println(agendamento.getValorTransferencia());
+        if(agendamento.getValorTransferencia() == null){
+            throw new IllegalArgumentException("O valor da transferência não pode ser nulo.");
+        }
 
         BigDecimal taxaCalculada = agendamento.getValorTransferencia().multiply(taxa).setScale(2, RoundingMode.HALF_UP);
         BigDecimal valorFinal = agendamento.getValorTransferencia().subtract(taxa);
