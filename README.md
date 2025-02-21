@@ -10,7 +10,6 @@ Este projeto tem como objetivo realizar o **agendamento de transferência** de v
 - 🟢 **Angular** (versão 16.2.0)
 - ⚙️ **Node.js** (versão 22.14.0)
 - 🟡 **TypeScript** (versão 5.1.3)
-- 🔵 **Banco de Dados H2**
 
 ## 📌 Funcionalidades
 
