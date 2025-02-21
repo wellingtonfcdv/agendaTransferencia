@@ -13,7 +13,7 @@ public class TransfereAgendamentoController {
     @Autowired
     private TransfereAgendamentoService agendamentoService;
 
-    @PostMapping
+    @PostMapping("/transferencia")
     public TransfereAgendamento transfereAgendamento(@RequestBody TransfereAgendamento agendamento){
         return agendamentoService.transfereAgendamento(agendamento);
     }
