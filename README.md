@@ -50,3 +50,4 @@ O backend segue uma arquitetura baseada em **MVC (Model-View-Controller)** com c
 - **Spring Data JPA**: Para persistência de dados.
 - **H2 Database**: Banco de dados em memória para desenvolvimento.
 - **Maven**: Gerenciamento de dependências.
+- **Insomnia**: Para realização de testes da funcionalidade da Api.
