@@ -22,7 +22,9 @@ export class AgendamentoComponent{
             response => {
                 alert('Transferência agendada com sucesso!');
             },
-
-        )
+            error =>{
+              alert('Erro ao agendar transferência: ' + error.message);
+            }
+        );
     }
 }
