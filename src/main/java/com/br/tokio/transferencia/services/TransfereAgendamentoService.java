@@ -29,10 +29,12 @@ public class TransfereAgendamentoService {
 
     private BigDecimal calculoTaxa(LocalDate dataTransferencia) {
         Long diasTransferencia = ChronoUnit.DAYS.between(LocalDate.now(),dataTransferencia);
-        if (diasTransferencia <= 0)
+        if (diasTransferencia == 0)
             return new BigDecimal("0.025");
+        if(diasTransferencia < 0)
+            return null;
         if (diasTransferencia > 0 && diasTransferencia <= 10)
-            return new BigDecimal("0");
+            return null;
         if (diasTransferencia > 10 && diasTransferencia <= 20)
             return new BigDecimal("0.082");
         if (diasTransferencia > 20 && diasTransferencia <= 30)
