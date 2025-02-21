@@ -3,8 +3,8 @@ import { TransferenciaService } from "../services/TransferenciaService";
 
 @Component({
   selector: 'app-extrato',
-  templateUrl: './extrato.component.html',
-  styleUrls: ['./extrato.component.css']
+  templateUrl: './ExtratoComponent.html',
+  styleUrls: []
 })
 export class ExtratoComponent implements OnInit {
   transferencias: any[] = [];
@@ -19,6 +19,12 @@ export class ExtratoComponent implements OnInit {
       error => {
         alert('Erro ao carregar extrato: ' + error.message);
       }
+
     );
+
+  }
+  onSubmit(): void {
+    console.log("Formulário enviado!");
+    // Aqui pode ser implementada a lógica de filtro ou outra ação
   }
 }
