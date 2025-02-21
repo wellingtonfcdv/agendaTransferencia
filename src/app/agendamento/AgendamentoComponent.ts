@@ -3,8 +3,8 @@ import { TransferenciaService } from "../services/TransferenciaService";
 
 @Component({
     selector: 'app-agendamento',
-    templateUrl: './agendamento.component.html',
-    styleUrls: ['./agendamento.component.css']
+    templateUrl: './AgendamentoComponent.html',
+    styleUrls: []
 })
 
 export class AgendamentoComponent{
