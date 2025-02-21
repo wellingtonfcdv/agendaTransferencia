@@ -24,9 +24,11 @@ public class TransfereAgendamento {
     private String contaDestino;
     private BigDecimal valorTransferencia;
     private BigDecimal taxa;
+    private BigDecimal taxaAtualizada;
+    private BigDecimal valorFinal;
     private LocalDate dataTransferencia;
     private LocalDate dataAgendamento;
-    private BigDecimal valorFinal;
+
 
 
 }
